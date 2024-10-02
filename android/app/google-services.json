@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "273872912892",
+    "project_id": "mbsauto-b778d",
+    "storage_bucket": "mbsauto-b778d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273872912892:android:38d5316b01cec40821f279",
+        "android_client_info": {
+          "package_name": "com.mbsauto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273872912892-1l0l9dnhb47dp1ls3cuadh8tm8r7949n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mbsauto",
+            "certificate_hash": "f449d4d20789b557a1e15da74ed5a24edae6ef80"
+          }
+        },
+        {
+          "client_id": "273872912892-ph2pdi5am7f6lr7fh4dud1f83um0978o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mbsauto",
+            "certificate_hash": "f45169d08e596825485c830ce0b9d686f64bfe8d"
+          }
+        },
+        {
+          "client_id": "273872912892-kc28plpb6267gv8bmgm8ot2acmda92jn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMPq8TsxzQuMaLPiOcKioRWms6WVclnys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273872912892-dqirn8vqh9jtc5es7kjlp9dhksamc9op.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "273872912892-1eajhb0kk46sjsglpiuob6gc51fr70i5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.MbsAutos"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Netflix Sans Bold.otf",
+      "sha1": "ec86f44253e3b01d9e225e7e83dda2a57861bd2e"
+    },
+    {
+      "path": "assets/fonts/Netflix Sans Light.otf",
+      "sha1": "65d68312e568093609bdada90d9aef16086ca479"
+    },
+    {
+      "path": "assets/fonts/Netflix Sans Medium.otf",
+      "sha1": "dd914ba84c67ca1e95ae857d906de4057850a540"
+    }
+  ]
+}
