@@ -2,8 +2,10 @@ import React,{useState,useEffect} from 'react';
 import tw from 'twrnc'
 import Saved from './Saved'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AppleButton } from '@invertase/react-native-apple-authentication';
 import { useNavigation } from '@react-navigation/native';
 import { _signInWithGoogle , _signOutGoogle, isUserSignedIn } from '../authconfig/Googlesignin'
+import {onAppleButtonPress} from '../authconfig/AppleSignin'
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
 import {
   StyleSheet,
@@ -92,6 +94,52 @@ const fetchData = async (key) => {
     return null;
   }
 };
+const applesignIn=async()=>{
+    
+
+  try {
+    const data=await onAppleButtonPress()
+
+    if (!data) {
+      console.log('No data');
+      return;
+    }
+
+
+
+    // Set states and increment count
+    setfedemail(data.additionalUserInfo.profile.email);
+    setfedusername(data.additionalUserInfo.profile.email);
+    setCount(count + 1);
+
+    // Make API call
+    setLoading(true);
+    const response = await fetch(`https://mangaautomobiles.com/api/googlesignin/${data.additionalUserInfo.profile.email}/${data.additionalUserInfo.profile.email}`, {
+      method: 'POST'
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch');
+    }
+
+    const responseData = await response.json();
+
+    // Handle response
+    if (responseData.email) {
+      setUsername(responseData.email);
+      AsyncStorage.setItem('username', responseData.email);
+      AsyncStorage.setItem('data', JSON.stringify(responseData));
+      AsyncStorage.setItem('loggedIn', 'true');
+      setData(responseData);
+      setLoggedIn(true);
+    }
+  } catch (error) {
+    console.error('Error during APPLE Sign In:', error);
+ 
+  } finally {
+    setLoading(false);
+  }
+}
 const handleGoogle = async () => {
   try {
     const data = await _signInWithGoogle();
@@ -214,6 +262,17 @@ else{
         color={GoogleSigninButton.Color.Light}
  onPress={handleGoogle}
       />
+
+<AppleButton
+
+      buttonStyle={AppleButton.Style.WHITE}
+      buttonType={AppleButton.Type.SIGN_IN}
+      style={{
+        width: 160,
+        height: 45,
+      }}
+      onPress={() => applesignIn()}
+    />
         <TouchableOpacity style={styles.createAccountButton} onPress={()=>Navigation.navigate('Register')}>
           <Text style={styles.createAccountButtonText}>Create Account</Text>
         </TouchableOpacity>
